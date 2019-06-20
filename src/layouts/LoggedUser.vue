@@ -1,7 +1,7 @@
 <template>
   <div class="app-body">
     <div class="sidebar" :class="{ 'collapsed': collapsed }">
-      <div class="sidebar-header" style="height: 4.5rem">
+      <div class="sidebar-header">
         <svg class="logo">
           <use href="@/assets/img/sprites.svg#u"/>
         </svg>
