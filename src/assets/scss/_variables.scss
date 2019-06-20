@@ -1,5 +1,15 @@
 $white: #fff;
+$gray-100: #f8f9fc !default;
+$gray-200: #eaecf4 !default;
+$gray-300: #dddfeb !default;
+$gray-400: #d1d3e2 !default;
+$gray-500: #b7b9cc !default;
+$gray-600: #858796 !default;
+$gray-700: #6e707e !default;
+$gray-800: #5a5c69 !default;
+$gray-900: #3a3b45 !default;
 $dark: #343a40;
+
 $primary: #5960a3;
 $success: #2bbbad;
 $warning: #ffbb33;
@@ -12,4 +22,21 @@ $display2-size: 2.5rem;
 $display3-size: 2rem;
 $display4-size: 1.5rem;
 
+$body-color: $gray-700;
+$border-color: darken($gray-200, 2%);
+
+$box-shadow: 0 .15rem 1.75rem 0 rgba($gray-900, .15);
+
 $font-family-sans-serif: 'Source Sans Pro', sans-serif, Arial;
+
+$sidebar-width: 10rem;
+
+$navbar-light-brand-color: $gray-800;
+$navbar-light-brand-hover-color: $gray-800;
+
+$card-cap-bg: $gray-100;
+$card-border-color: $border-color;
+
+$dropdown-border-color: $border-color;
+$dropdown-color: $body-color;
+$dropdown-font-size: 11pt;

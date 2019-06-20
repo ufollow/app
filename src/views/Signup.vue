@@ -24,9 +24,9 @@
                     <div class="form-group">
                       <input type="password" class="form-control rounded-pill p-4" placeholder="Senha">
                     </div>
-                    <a href="index.html" class="btn btn-sm btn-primary btn-block rounded-pill py-3 text-uppercase">
+                    <router-link :to="{ name: 'dashboard' }" class="btn btn-sm btn-primary btn-block rounded-pill py-3 text-uppercase">
                       Criar conta
-                    </a>
+                    </router-link>
                   </form>
                   <hr>
                   <div class="text-center mb-5">
