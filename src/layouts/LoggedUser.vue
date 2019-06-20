@@ -44,14 +44,14 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right shadow">
               <a href="#" class="dropdown-item">
-                Meu perfil
+                <i class="fa fa-user-circle mr-2 text-gray-500"></i> Meu perfil
               </a>
               <a href="#" class="dropdown-item">
-                Configurações
+                <i class="fa fa-cog mr-2 text-gray-500"></i> Configurações
               </a>
               <div class="dropdown-divider"></div>
               <router-link :to="{ name: 'signin' }" class="dropdown-item">
-                Sair
+                <i class="fa fa-power-off mr-2 text-gray-500"></i> Sair
               </router-link>
             </div>
           </li>
