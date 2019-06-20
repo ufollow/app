@@ -49,6 +49,9 @@
               <a href="#" class="dropdown-item">
                 <i class="fa fa-cog mr-2 text-gray-500"></i> Configurações
               </a>
+              <a href="#" class="dropdown-item">
+                <i class="fa fa-question-circle mr-2 text-gray-500"></i> Ajuda
+              </a>
               <div class="dropdown-divider"></div>
               <router-link :to="{ name: 'signin' }" class="dropdown-item">
                 <i class="fa fa-power-off mr-2 text-gray-500"></i> Sair
