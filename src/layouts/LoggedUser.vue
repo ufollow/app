@@ -8,18 +8,18 @@
       </div>
       <hr class="sidebar-divider">
       <div class="sidebar-nav">
-        <a href="#" class="sidebar-link">
+        <router-link :to="{ name: 'dashboard' }" class="sidebar-link">
           <i class="fa fa-chart-pie fa-lg fa-fw mb-2"></i>
           <span>Indicadores</span>
-        </a>
+        </router-link>
         <a href="#" class="sidebar-link">
           <i class="fa fa-address-book fa-lg fa-fw mb-2"></i>
           <span>Contatos</span>
         </a>
-        <a href="#" class="sidebar-link">
+        <router-link :to="{ name: 'campaigns' }" class="sidebar-link">
           <i class="fa fa-mail-bulk fa-lg fa-fw mb-2"></i>
           <span>Campanhas</span>
-        </a>
+        </router-link>
         <a href="#" class="sidebar-link">
           <i class="fa fa-sync-alt fa-lg fa-fw mb-2"></i>
           <span>Gatilhos</span>
@@ -34,7 +34,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <h1 class="display-1 navbar-brand ml-2 mb-0">
+        <h1 class="display-1 navbar-brand ml-2 mb-0 text-primary">
           {{ title }}
         </h1>
         <ul class="nav ml-auto">
