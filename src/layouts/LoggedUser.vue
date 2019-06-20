@@ -22,7 +22,7 @@
         </a>
         <a href="#" class="sidebar-link">
           <i class="fa fa-images fa-lg fa-fw mb-2"></i>
-          <span>Minha galeria</span>
+          <span>Galeria</span>
         </a>
       </div>
     </div>

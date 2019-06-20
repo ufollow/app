@@ -1,0 +1,5 @@
+@each $scale, $value in $grays {
+  .text-gray-#{$scale} {
+    color: $value;
+  }
+}
