@@ -21,8 +21,8 @@
           <span>Campanhas</span>
         </a>
         <a href="#" class="sidebar-link">
-          <i class="fa fa-images fa-lg fa-fw mb-2"></i>
-          <span>Galeria</span>
+          <i class="fa fa-sync-alt fa-lg fa-fw mb-2"></i>
+          <span>Gatilhos</span>
         </a>
       </div>
     </div>
