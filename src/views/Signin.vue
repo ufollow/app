@@ -2,7 +2,7 @@
   <div class="container h-100">
     <div class="row justify-content-center h-100">
       <div class="col-xl-10 col-lg-12 col-md-9 d-flex">
-        <div class="card o-hidden border-0 shadow-lg my-5" style="flex: 1">
+        <div class="card flex-1 o-hidden border-0 shadow-lg my-5">
           <div class="card-body p-0">
             <div class="row h-100">
               <div class="col-lg-6 d-none d-lg-block bg-signin"></div>
@@ -21,9 +21,9 @@
                     <div class="form-group">
                       <input type="password" class="form-control rounded-pill p-4" placeholder="Senha">
                     </div>
-                    <a href="index.html" class="btn btn-sm btn-primary btn-block rounded-pill py-3 text-uppercase">
+                    <router-link :to="{ name: 'dashboard' }" class="btn btn-sm btn-primary btn-block rounded-pill py-3 text-uppercase">
                       Login
-                    </a>
+                    </router-link>
                   </form>
                   <hr>
                   <div class="text-center mb-5">
