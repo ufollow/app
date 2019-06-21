@@ -20,10 +20,10 @@
           <i class="fa fa-mail-bulk fa-lg fa-fw mb-2"></i>
           <span>Campanhas</span>
         </router-link>
-        <a href="#" class="sidebar-link">
-          <i class="fa fa-sync-alt fa-lg fa-fw mb-2"></i>
-          <span>Gatilhos</span>
-        </a>
+        <router-link :to="{ name: 'campaigns' }" class="sidebar-link">
+          <i class="fa fa-file-invoice fa-lg fa-fw mb-2"></i>
+          <span>Templates</span>
+        </router-link>
       </div>
     </div>
     <div class="app-content">
