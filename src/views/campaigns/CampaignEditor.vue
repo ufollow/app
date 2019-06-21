@@ -1,10 +1,10 @@
 <template>
   <div class="campaign-editor p-4">
     <div class="toolbar">
-      <button type="button" class="btn btn-secondary rounded-pill mr-3 mb-3"
+      <router-link :to="{ name: 'campaigns' }" class="btn btn-secondary rounded-pill mr-3 mb-3"
         data-toggle="popover" data-placement="top" data-content="Voltar" data-trigger="hover">
         <i class="fa fa-arrow-left"></i>
-      </button>
+      </router-link>
       <button type="button" class="btn btn-secondary rounded-pill mr-3 mb-3"
         data-toggle="popover" data-placement="top" data-content="Salvar" data-trigger="hover">
         <i class="fa fa-save"></i>
@@ -183,7 +183,6 @@ export default {
   mounted () {
     this.$parent.title = 'Editor de campanha'
 
-    $(() => $('[data-toggle="popover"]').popover())
     $(this.$refs.inputFile).on('change', () => this.preview())
   },
   methods: {
