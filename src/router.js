@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import CampaignEditor from './views/campaigns/CampaignEditor.vue'
 import Dashboard from './views/Dashboard.vue'
 import ForgotPassword from './views/ForgotPassword.vue'
 import LoggedUser from './layouts/LoggedUser.vue'
@@ -19,7 +20,8 @@ export default new Router({
       path: '/',
       component: LoggedUser,
       children: [
-        { path: '/', name: 'dashboard', component: Dashboard }
+        { path: '/', name: 'dashboard', component: Dashboard },
+        { path: '/campanhas', name: 'campaigns', component: CampaignEditor }
       ]
     }
   ]
