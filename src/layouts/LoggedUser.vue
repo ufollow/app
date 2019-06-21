@@ -24,6 +24,10 @@
           <i class="fa fa-file-invoice fa-lg fa-fw mb-2"></i>
           <span>Templates</span>
         </router-link>
+        <router-link :to="{ name: 'campaigns' }" class="sidebar-link">
+          <i class="fa fa-highlighter fa-lg fa-fw mb-2"></i>
+          <span>Marcadores</span>
+        </router-link>
       </div>
     </div>
     <div class="app-content">
