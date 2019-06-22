@@ -13,10 +13,6 @@
         <span class="icon"><i class="fa fa-eye"></i></span>
         <span class="text">Visualizar</span>
       </button>
-      <button type="button" class="btn btn-outline-danger btn-icon ml-auto mb-3">
-        <span class="icon"><i class="fa fa-trash"></i></span>
-        <span class="text">Remover</span>
-      </button>
     </div>
     <div class="card shadow m-auto" style="max-width: 800px;">
       <div class="p-3 border-bottom">

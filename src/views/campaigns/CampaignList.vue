@@ -37,6 +37,10 @@
                     <a href="#" class="dropdown-item">
                       <i class="fa fa-fw fa-globe mr-2"></i> Publicações
                     </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item">
+                      <i class="fa fa-fw fa-trash mr-2"></i> Remover
+                    </a>
                   </div>
                 </div>
               </td>
