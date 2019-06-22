@@ -15,7 +15,7 @@
                 <div class="small text-secondary">
                   Criada em {{ campaign.createdAt }}
                 </div>
-                <span class="badge badge-secondary mr-1 mt-2" v-for="label in campaign.labels" :key="label.id">
+                <span class="badge badge-secondary text-uppercase mr-1 mt-2" v-for="label in campaign.labels" :key="label.id">
                   {{ label.name }}
                 </span>
               </td>

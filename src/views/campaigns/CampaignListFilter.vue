@@ -18,7 +18,7 @@
               <div class="input-group">
                 <div class="form-control overflow-auto">
                   <span class="text-secondary" v-if="selectedLabels.length === 0">Todos</span>
-                  <a href="#" class="badge badge-secondary mr-1" v-for="label in selectedLabels" :key="label.id"
+                  <a href="#" class="badge badge-secondary text-uppercase mr-1" v-for="label in selectedLabels" :key="label.id"
                     @click.prevent="removeLabel(label)">
                     {{ label.name }} <span class="ml-1">&times;</span>
                   </a>
