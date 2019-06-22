@@ -4,8 +4,8 @@
     <div class="input-group">
       <div class="form-control overflow-auto">
         <span class="text-secondary" v-if="labels.length === 0">Todos</span>
-        <a href="#" class="badge badge-secondary text-uppercase mr-1" v-for="label in labels" :key="label.id"
-          @click.prevent="removeLabel(label)">
+        <a href="#" class="badge badge-secondary text-uppercase mr-1"
+          v-for="label in labels" :key="label.id" @click.prevent="removeLabel(label)">
           {{ label.name }} <span class="ml-1">&times;</span>
         </a>
       </div>
@@ -38,35 +38,21 @@ export default {
       ]
     }
   },
-  mounted () {
-    this.emit()
-  },
   props: {
-    labels: {
-      type: Array,
-      default: () => []
-    },
-    submit: Function
+    labels: Array
   },
   methods: {
     addLabel (label) {
       const index = this.labels.indexOf(label)
+      const notContain = index < 0
 
-      if (index < 0) {
-        this.labels.push(label)
-        this.emit()
-      }
-    },
-    emit () {
-      this.$emit('input', this.labels)
+      if (notContain) this.labels.push(label)
     },
     removeLabel (label) {
       const index = this.labels.indexOf(label)
+      const contains = index >= 0
 
-      if (index >= 0) {
-        this.labels.splice(index, 1)
-        this.emit()
-      }
+      if (contains) this.labels.splice(index, 1)
     }
   }
 }

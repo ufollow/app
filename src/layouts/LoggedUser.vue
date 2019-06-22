@@ -12,10 +12,10 @@
           <i class="fa fa-chart-pie fa-lg fa-fw mb-2"></i>
           <span>Indicadores</span>
         </router-link>
-        <a href="#" class="sidebar-link">
+        <router-link :to="{ name: 'contacts' }" class="sidebar-link">
           <i class="fa fa-address-book fa-lg fa-fw mb-2"></i>
           <span>Contatos</span>
-        </a>
+        </router-link>
         <router-link :to="{ name: 'campaigns' }" class="sidebar-link">
           <i class="fa fa-mail-bulk fa-lg fa-fw mb-2"></i>
           <span>Campanhas</span>
