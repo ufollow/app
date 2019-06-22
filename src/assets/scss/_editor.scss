@@ -1,0 +1,46 @@
+.campaign-editor {
+
+  .toolbar {
+    display: flex;
+    margin: auto;
+    max-width: 50rem;
+  }
+
+  .campaign-cover,
+  .campaign-cover-instructions {
+    height: auto;
+    max-width: 100%;
+  }
+
+  .campaign-cover-instructions {
+    background: fade-out($gray-200, .4);
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
+    p {
+      max-width: 20rem;
+      text-align: center;
+    }
+
+    p,
+    button {
+      font-size: 11pt;
+    }
+  }
+
+  .campaign-content {
+    background: $white;
+    outline: 0 solid transparent;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+
+    h1 {
+      font-size: 22pt;
+    }
+
+    h2 {
+      font-size: 20pt;
+    }
+  }
+}
