@@ -57,8 +57,8 @@ export default {
       title: '',
       allLabels: [
         { id: 'a1', name: 'Analistas' },
-        { id: 'a2', name: 'Designers' },
-        { id: 'a3', name: 'Desenvolvedores' },
+        { id: 'a2', name: 'Desenvolvedores' },
+        { id: 'a3', name: 'Designers' },
         { id: 'a4', name: 'Empreendedores' },
         { id: 'a5', name: 'Gerentes' }
       ],

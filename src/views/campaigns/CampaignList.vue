@@ -12,7 +12,12 @@
             <tr v-for="campaign in campaignList.campaigns" :key="campaign.id">
               <td>
                 <div>{{ campaign.title }}</div>
-                <small class="text-secondary">Criada em {{ campaign.createdAt }}</small>
+                <div class="small text-secondary">
+                  Criada em {{ campaign.createdAt }}
+                </div>
+                <span class="badge badge-secondary mr-1 mt-2" v-for="label in campaign.labels" :key="label.id">
+                  {{ label.name }}
+                </span>
               </td>
               <td class="align-middle text-right">
                 <div class="dropdown">
@@ -54,8 +59,21 @@ export default {
       filter: {},
       campaignList: {
         campaigns: [
-          { id: 'a1', title: 'Olá! Nossas boas-vindas a sua conta ufollow', createdAt: '20/03/2019' },
-          { id: 'a2', title: 'Parabéns pra você nessa data querida! :)', createdAt: '10/06/2019' }
+          {
+            id: 'a1',
+            title: 'Olá! Nossas boas-vindas a sua conta ufollow',
+            createdAt: '20/03/2019',
+            labels: [
+              { id: 'a2', name: 'Desenvolvedores' },
+              { id: 'a3', name: 'Designers' }
+            ]
+          },
+          {
+            id: 'a2',
+            title: 'Parabéns pra você nessa data querida! :)',
+            createdAt: '10/06/2019',
+            labels: []
+          }
         ],
         count: 100
       }
