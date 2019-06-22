@@ -14,27 +14,7 @@
           </div>
           <div class="col-12 col-md-6 col-lg-6">
             <div class="form-group">
-              <label>Marcadores</label>
-              <div class="input-group">
-                <div class="form-control overflow-auto">
-                  <span class="text-secondary" v-if="selectedLabels.length === 0">Todos</span>
-                  <a href="#" class="badge badge-secondary text-uppercase mr-1" v-for="label in selectedLabels" :key="label.id"
-                    @click.prevent="removeLabel(label)">
-                    {{ label.name }} <span class="ml-1">&times;</span>
-                  </a>
-                </div>
-                <div class="input-group-append">
-                  <button type="button" class="btn btn-outline-secondary rounded-right" data-toggle="dropdown">
-                    <i class="fa fa-ellipsis-h"></i>
-                  </button>
-                  <div class="dropdown-menu dropdown-menu-right">
-                    <a href="#" class="dropdown-item" v-for="label in allLabels" :key="label.id"
-                      @click.prevent="addLabel(label)">
-                      {{ label.name }}
-                    </a>
-                  </div>
-                </div>
-              </div>
+              <MarkerLabel :labels="labels"/>
             </div>
           </div>
         </div>
@@ -50,19 +30,14 @@
 </template>
 
 <script>
+import MarkerLabel from '@/components/MarkerLabel'
+
 export default {
   name: 'campaignListFilter',
   data () {
     return {
       title: '',
-      allLabels: [
-        { id: 'a1', name: 'Analistas' },
-        { id: 'a2', name: 'Desenvolvedores' },
-        { id: 'a3', name: 'Designers' },
-        { id: 'a4', name: 'Empreendedores' },
-        { id: 'a5', name: 'Gerentes' }
-      ],
-      selectedLabels: [],
+      labels: [],
       index: 0,
       length: 10
     }
@@ -70,36 +45,24 @@ export default {
   mounted () {
     this.emit()
   },
+  components: {
+    MarkerLabel
+  },
   props: {
     submit: Function
   },
   methods: {
-    addLabel (label) {
-      const index = this.selectedLabels.indexOf(label)
-
-      if (index < 0) {
-        this.selectedLabels.push(label)
-        this.emit()
-      }
-    },
     emit () {
       this.$emit('input', {
         title: this.title,
+        labels: this.labels,
         index: this.index,
         length: this.length
       })
     },
-    removeLabel (label) {
-      const index = this.selectedLabels.indexOf(label)
-
-      if (index >= 0) {
-        this.selectedLabels.splice(index, 1)
-        this.emit()
-      }
-    },
     reset () {
       this.name = null
-      this.selectedLabels = []
+      this.labels = []
       this.index = 0
       this.emit()
     }

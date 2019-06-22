@@ -55,6 +55,7 @@
 
 <script>
 import CampaignListFilter from './CampaignListFilter'
+import Paging from '@/components/Paging'
 
 export default {
   name: 'campaignList',
@@ -87,7 +88,8 @@ export default {
     this.$parent.title = 'Campanhas'
   },
   components: {
-    CampaignListFilter
+    CampaignListFilter,
+    Paging
   },
   methods: {
     search () { }
