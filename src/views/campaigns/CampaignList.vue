@@ -1,21 +1,18 @@
 <template>
   <div class="container p-4">
-    <router-link :to="{ name: 'campaignEditor' }" class="btn btn-secondary rounded-pill mr-3 mb-3"
-      data-toggle="popover" data-placement="top" data-content="Nova campanha" data-trigger="hover">
-      <i class="fa fa-plus"></i>
+    <router-link :to="{ name: 'campaignEditor' }" class="btn btn-primary btn-icon mr-3 mb-3">
+      <span class="icon"><i class="fa fa-plus"></i></span>
+      <span class="text">Nova campanha</span>
     </router-link>
-    <button type="button" class="btn btn-secondary rounded-pill mr-3 mb-3"
-      data-toggle="popover" data-placement="top" data-content="Nova campanha" data-trigger="hover">
-      <i class="fa fa-search"></i>
-    </button>
+    <CampaignListFilter v-model="filter" :submit="search" />
     <div class="card shadow">
       <div class="table-responsive">
         <table class="table mb-0">
           <tbody>
-            <tr v-for="campaign in campaigns" :key="campaign.id">
+            <tr v-for="campaign in campaignList.campaigns" :key="campaign.id">
               <td>
                 <div>{{ campaign.title }}</div>
-                <small class="text-secondary">Criado em {{ campaign.createdAt }}</small>
+                <small class="text-secondary">Criada em {{ campaign.createdAt }}</small>
               </td>
               <td class="align-middle text-right">
                 <div class="dropdown">
@@ -42,33 +39,36 @@
           </tbody>
         </table>
       </div>
-      <div class="card-footer">
-        <ul class="pagination justify-content-center my-2 mb-0">
-          <li class="page-item active"><a href="#" class="page-link">1</a></li>
-          <li class="page-item"><a href="#" class="page-link">2</a></li>
-          <li class="page-item"><a href="#" class="page-link">3</a></li>
-          <li class="page-item disabled"><a href="#" class="page-link">...</a></li>
-          <li class="page-item"><a href="#" class="page-link">10</a></li>
-        </ul>
-      </div>
     </div>
+    <Paging :index.sync="filter.index" :length="filter.length" :count="campaignList.count" @change="search" />
   </div>
 </template>
 
 <script>
+import CampaignListFilter from './CampaignListFilter'
+
 export default {
   name: 'campaignList',
-  // mixins: [bootstrapMixin],
   data () {
     return {
-      campaigns: [
-        { id: 'a1', title: 'Olá! Nossas boas-vindas a sua conta ufollow', createdAt: '20/03/2019' },
-        { id: 'a2', title: 'Parabéns pra você nessa data querida! :)', createdAt: '10/06/2019' }
-      ]
+      filter: {},
+      campaignList: {
+        campaigns: [
+          { id: 'a1', title: 'Olá! Nossas boas-vindas a sua conta ufollow', createdAt: '20/03/2019' },
+          { id: 'a2', title: 'Parabéns pra você nessa data querida! :)', createdAt: '10/06/2019' }
+        ],
+        count: 100
+      }
     }
   },
   mounted () {
     this.$parent.title = 'Campanhas'
+  },
+  components: {
+    CampaignListFilter
+  },
+  methods: {
+    search () { }
   }
 }
 </script>

@@ -1,17 +1,21 @@
 <template>
   <div class="campaign-editor p-4">
     <div class="toolbar">
-      <router-link :to="{ name: 'campaigns' }" class="btn btn-secondary rounded-pill mr-3 mb-3"
-        data-toggle="popover" data-placement="top" data-content="Voltar" data-trigger="hover">
-        <i class="fa fa-arrow-left"></i>
+      <router-link :to="{ name: 'campaigns' }" class="btn btn-outline-secondary btn-icon mr-3 mb-3">
+        <span class="icon"><i class="fa fa-arrow-left"></i></span>
+        <span class="text">Voltar</span>
       </router-link>
-      <button type="button" class="btn btn-secondary rounded-pill mr-3 mb-3"
-        data-toggle="popover" data-placement="top" data-content="Salvar" data-trigger="hover">
-        <i class="fa fa-save"></i>
+      <button type="button" class="btn btn-secondary btn-icon mr-2 mb-3">
+        <span class="icon"><i class="fa fa-save"></i></span>
+        <span class="text">Salvar</span>
       </button>
-      <button type="button" class="btn btn-secondary rounded-pill mr-3 mb-3"
-        data-toggle="popover" data-placement="top" data-content="Visualizar" data-trigger="hover">
-        <i class="fa fa-file-invoice"></i>
+      <button type="button" class="btn btn-secondary btn-icon mr-2 mb-3">
+        <span class="icon"><i class="fa fa-eye"></i></span>
+        <span class="text">Visualizar</span>
+      </button>
+      <button type="button" class="btn btn-outline-danger btn-icon ml-auto mb-3">
+        <span class="icon"><i class="fa fa-trash"></i></span>
+        <span class="text">Remover</span>
       </button>
     </div>
     <div class="card shadow m-auto" style="max-width: 800px;">
