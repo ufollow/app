@@ -15,8 +15,8 @@
                 <div class="small text-secondary">
                   Criada em {{ campaign.createdAt }}
                 </div>
-                <span class="badge badge-secondary text-uppercase mr-1 mt-2" v-for="label in campaign.labels" :key="label.id">
-                  {{ label.name }}
+                <span class="badge badge-secondary text-uppercase mr-1 mt-2" v-for="tag in campaign.tags" :key="tag.id">
+                  {{ tag.name }}
                 </span>
               </td>
               <td class="align-middle text-right">
@@ -63,7 +63,7 @@ export default {
     return {
       filter: {
         title: '',
-        labels: [],
+        tags: [],
         index: 0,
         length: 10
       },
@@ -73,7 +73,7 @@ export default {
             id: 'a1',
             title: 'Olá! Nossas boas-vindas a sua conta ufollow',
             createdAt: '20/03/2019',
-            labels: [
+            tags: [
               { id: 'a2', name: 'Desenvolvedores' },
               { id: 'a3', name: 'Designers' }
             ]
@@ -82,7 +82,7 @@ export default {
             id: 'a2',
             title: 'Parabéns pra você nessa data querida! :)',
             createdAt: '10/06/2019',
-            labels: []
+            tags: []
           }
         ],
         count: 100

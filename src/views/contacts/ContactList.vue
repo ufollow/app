@@ -17,8 +17,8 @@
                   Cadastrado em {{ contact.createdAt }}
                 </div>
                 <span class="badge badge-secondary text-uppercase mr-1 mt-2"
-                  v-for="label in contact.labels" :key="label.id">
-                  {{ label.name }}
+                  v-for="tag in contact.tags" :key="tag.id">
+                  {{ tag.name }}
                 </span>
               </td>
               <td class="align-middle text-right">
@@ -61,7 +61,7 @@ export default {
     return {
       filter: {
         name: '',
-        labels: [],
+        tags: [],
         index: 0,
         length: 10
       },
@@ -72,7 +72,7 @@ export default {
             id: 'a1',
             name: 'Maya Vera Monteiro',
             createdAt: '20/03/2019',
-            labels: [
+            tags: [
               { id: 'a2', name: 'Desenvolvedores' }
             ]
           },
@@ -80,7 +80,7 @@ export default {
             id: 'a2',
             name: 'Fátima Nicole de Paula',
             createdAt: '10/06/2019',
-            labels: [
+            tags: [
               { id: 'a3', name: 'Designers' }
             ]
           }

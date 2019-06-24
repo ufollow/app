@@ -14,7 +14,7 @@
           </div>
           <div class="col-12 col-md-6 col-lg-6">
             <div class="form-group">
-              <MarkerLabel :labels="filter.labels" placeholder="Todos"/>
+              <TagMarker :tags="filter.tags" placeholder="Todos"/>
             </div>
           </div>
         </div>
@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import MarkerLabel from '@/components/MarkerLabel'
+import TagMarker from '@/components/TagMarker'
 
 export default {
   name: 'contactListFilter',
@@ -39,12 +39,12 @@ export default {
     submit: Function
   },
   components: {
-    MarkerLabel
+    TagMarker
   },
   methods: {
     reset () {
       this.filter.name = ''
-      this.filter.labels = []
+      this.filter.tags = []
       this.filter.index = 0
     }
   }
