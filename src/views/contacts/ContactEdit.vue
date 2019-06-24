@@ -8,7 +8,7 @@
       <span class="icon"><i class="fa fa-save"></i></span>
       <span class="text">Salvar</span>
     </button>
-    <div class="card">
+    <div class="card shadow">
       <div class="card-body">
         <div class="row">
           <div class="col-12 col-md-8 col-lg-8">

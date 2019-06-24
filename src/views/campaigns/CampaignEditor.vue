@@ -1,7 +1,7 @@
 <template>
   <div class="campaign-editor p-4">
     <div class="toolbar">
-      <router-link :to="{ name: 'campaigns' }" class="btn btn-outline-secondary btn-icon mr-3 mb-3">
+      <router-link :to="{ name: 'campaignList' }" class="btn btn-outline-secondary btn-icon mr-3 mb-3">
         <span class="icon"><i class="fa fa-arrow-left"></i></span>
         <span class="text">Voltar</span>
       </router-link>

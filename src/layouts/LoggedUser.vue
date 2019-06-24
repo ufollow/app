@@ -24,7 +24,7 @@
           <i class="fa fa-file-invoice fa-lg fa-fw mb-2"></i>
           <span>Templates</span>
         </router-link>
-        <router-link :to="{ name: 'dashboard' }" class="sidebar-link">
+        <router-link :to="{ name: 'tagList' }" class="sidebar-link">
           <i class="fa fa-highlighter fa-lg fa-fw mb-2"></i>
           <span>Marcadores</span>
         </router-link>

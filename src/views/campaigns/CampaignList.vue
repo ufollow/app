@@ -15,7 +15,8 @@
                 <div class="small text-secondary">
                   Criada em {{ campaign.createdAt }}
                 </div>
-                <span class="badge badge-secondary text-uppercase mr-1 mt-2" v-for="tag in campaign.tags" :key="tag.id">
+                <span :class="`badge bg-palette-${tag.color} text-uppercase mr-1 mt-2`"
+                  v-for="tag in campaign.tags" :key="tag.id">
                   {{ tag.name }}
                 </span>
               </td>
@@ -74,8 +75,8 @@ export default {
             title: 'Olá! Nossas boas-vindas a sua conta ufollow',
             createdAt: '20/03/2019',
             tags: [
-              { id: 'a2', name: 'Desenvolvedores' },
-              { id: 'a3', name: 'Designers' }
+              { id: 'a2', name: 'Desenvolvedores', color: 'gray-dark' },
+              { id: 'a3', name: 'Designers', color: 'purple-dark' }
             ]
           },
           {
