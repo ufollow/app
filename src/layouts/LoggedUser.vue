@@ -12,19 +12,19 @@
           <i class="fa fa-chart-pie fa-lg fa-fw mb-2"></i>
           <span>Indicadores</span>
         </router-link>
-        <a href="#" class="sidebar-link">
+        <router-link :to="{ name: 'contactList' }" class="sidebar-link">
           <i class="fa fa-address-book fa-lg fa-fw mb-2"></i>
           <span>Contatos</span>
-        </a>
-        <router-link :to="{ name: 'campaigns' }" class="sidebar-link">
+        </router-link>
+        <router-link :to="{ name: 'campaignList' }" class="sidebar-link">
           <i class="fa fa-mail-bulk fa-lg fa-fw mb-2"></i>
           <span>Campanhas</span>
         </router-link>
-        <router-link :to="{ name: 'campaigns' }" class="sidebar-link">
+        <router-link :to="{ name: 'dashboard' }" class="sidebar-link">
           <i class="fa fa-file-invoice fa-lg fa-fw mb-2"></i>
           <span>Templates</span>
         </router-link>
-        <router-link :to="{ name: 'campaigns' }" class="sidebar-link">
+        <router-link :to="{ name: 'dashboard' }" class="sidebar-link">
           <i class="fa fa-highlighter fa-lg fa-fw mb-2"></i>
           <span>Marcadores</span>
         </router-link>

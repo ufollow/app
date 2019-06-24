@@ -8,8 +8,8 @@
         <div class="row">
           <div class="col-12 col-md-6 col-lg-6">
             <div class="form-group">
-              <label>Título</label>
-              <input type="text" class="form-control" maxlength="80" v-model="filter.title">
+              <label>Nome</label>
+              <input type="text" class="form-control" maxlength="80" v-model="filter.name">
             </div>
           </div>
           <div class="col-12 col-md-6 col-lg-6">
@@ -33,17 +33,17 @@
 import MarkerLabel from '@/components/MarkerLabel'
 
 export default {
-  name: 'campaignListFilter',
-  components: {
-    MarkerLabel
-  },
+  name: 'contactListFilter',
   props: {
     filter: Object,
     submit: Function
   },
+  components: {
+    MarkerLabel
+  },
   methods: {
     reset () {
-      this.filter.title = ''
+      this.filter.name = ''
       this.filter.labels = []
       this.filter.index = 0
     }

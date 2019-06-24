@@ -1,21 +1,23 @@
 <template>
   <div class="container p-4">
-    <router-link :to="{ name: 'campaignEditor' }" class="btn btn-primary btn-icon mr-3 mb-3">
+    <router-link :to="{ name: 'contactEdit' }" class="btn btn-primary btn-icon mr-3 mb-3">
       <span class="icon"><i class="fa fa-plus"></i></span>
-      <span class="text">Nova campanha</span>
+      <span class="text">Novo contato</span>
     </router-link>
-    <CampaignListFilter :filter="filter" :submit="search"/>
+    <ContactDelete ref="contactDelete" :contact="selectedContact"/>
+    <ContactListFilter :filter="filter"/>
     <div class="card shadow">
       <div class="table-responsive">
         <table class="table mb-0">
           <tbody>
-            <tr v-for="campaign in campaignList.campaigns" :key="campaign.id">
+            <tr v-for="contact in contactList.contacts" :key="contact.id">
               <td>
-                <div>{{ campaign.title }}</div>
+                <div>{{ contact.name }}</div>
                 <div class="small text-secondary">
-                  Criada em {{ campaign.createdAt }}
+                  Cadastrado em {{ contact.createdAt }}
                 </div>
-                <span class="badge badge-secondary text-uppercase mr-1 mt-2" v-for="label in campaign.labels" :key="label.id">
+                <span class="badge badge-secondary text-uppercase mr-1 mt-2"
+                  v-for="label in contact.labels" :key="label.id">
                   {{ label.name }}
                 </span>
               </td>
@@ -31,14 +33,8 @@
                     <a href="#" class="dropdown-item">
                       <i class="fa fa-fw fa-file-invoice mr-2"></i> Visualizar
                     </a>
-                    <a href="#" class="dropdown-item">
-                      <i class="fa fa-fw fa-sync-alt mr-2"></i> Gatilhos
-                    </a>
-                    <a href="#" class="dropdown-item">
-                      <i class="fa fa-fw fa-globe mr-2"></i> Publicações
-                    </a>
                     <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">
+                    <a href="#" class="dropdown-item" @click.prevent="remove(contact)">
                       <i class="fa fa-fw fa-trash mr-2"></i> Remover
                     </a>
                   </div>
@@ -49,40 +45,44 @@
         </table>
       </div>
     </div>
-    <Paging :index.sync="filter.index" :length="filter.length" :count="campaignList.count" @change="search"/>
+    <Paging :index.sync="filter.index" :length="filter.length"
+      :count="contactList.count" @change="search"/>
   </div>
 </template>
 
 <script>
-import CampaignListFilter from './CampaignListFilter'
+import ContactDelete from './ContactDelete'
+import ContactListFilter from './ContactListFilter'
 import Paging from '@/components/Paging'
 
 export default {
-  name: 'campaignList',
+  name: 'contactList',
   data () {
     return {
       filter: {
-        title: '',
+        name: '',
         labels: [],
         index: 0,
         length: 10
       },
-      campaignList: {
-        campaigns: [
+      selectedContact: null,
+      contactList: {
+        contacts: [
           {
             id: 'a1',
-            title: 'Olá! Nossas boas-vindas a sua conta ufollow',
+            name: 'Maya Vera Monteiro',
             createdAt: '20/03/2019',
             labels: [
-              { id: 'a2', name: 'Desenvolvedores' },
-              { id: 'a3', name: 'Designers' }
+              { id: 'a2', name: 'Desenvolvedores' }
             ]
           },
           {
             id: 'a2',
-            title: 'Parabéns pra você nessa data querida! :)',
+            name: 'Fátima Nicole de Paula',
             createdAt: '10/06/2019',
-            labels: []
+            labels: [
+              { id: 'a3', name: 'Designers' }
+            ]
           }
         ],
         count: 100
@@ -90,13 +90,18 @@ export default {
     }
   },
   mounted () {
-    this.$parent.title = 'Campanhas'
+    this.$parent.title = 'Contatos'
   },
   components: {
-    CampaignListFilter,
+    ContactDelete,
+    ContactListFilter,
     Paging
   },
   methods: {
+    remove (contact) {
+      this.selectedContact = contact
+      $(this.$refs.contactDelete.$el).modal('show')
+    },
     search () { }
   }
 }

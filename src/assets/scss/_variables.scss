@@ -1,13 +1,13 @@
 $white: #fff;
-$gray-100: #f8f9fc !default;
-$gray-200: #eaecf4 !default;
-$gray-300: #dddfeb !default;
-$gray-400: #d1d3e2 !default;
-$gray-500: #b7b9cc !default;
-$gray-600: #858796 !default;
-$gray-700: #6e707e !default;
-$gray-800: #5a5c69 !default;
-$gray-900: #3a3b45 !default;
+$gray-100: #f8f9fc;
+$gray-200: #eaecf4;
+$gray-300: #dddfeb;
+$gray-400: #d1d3e2;
+$gray-500: #b7b9cc;
+$gray-600: #858796;
+$gray-700: #6e707e;
+$gray-800: #5a5c69;
+$gray-900: #3a3b45;
 $dark: #343a40;
 
 $primary: #5960a3;
@@ -45,3 +45,9 @@ $dropdown-font-size: 11pt;
 
 $table-cell-padding: 1.25rem;
 $table-cell-padding-sm: .5rem;
+
+$modal-backdrop-bg: $white;
+$modal-backdrop-opacity: .75;
+$modal-content-border-color: $border-color;
+$modal-fade-transform: scale(.9);
+$modal-transition: transform .2s ease-out;
