@@ -4,7 +4,8 @@
       <span class="icon"><i class="fa fa-plus"></i></span>
       <span class="text">Novo contato</span>
     </router-link>
-    <ContactListFilter :filter="filter" />
+    <ContactDelete ref="contactDelete" :contact="selectedContact"/>
+    <ContactListFilter :filter="filter"/>
     <div class="card shadow">
       <div class="table-responsive">
         <table class="table mb-0">
@@ -33,7 +34,7 @@
                       <i class="fa fa-fw fa-file-invoice mr-2"></i> Visualizar
                     </a>
                     <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">
+                    <a href="#" class="dropdown-item" @click.prevent="remove(contact)">
                       <i class="fa fa-fw fa-trash mr-2"></i> Remover
                     </a>
                   </div>
@@ -45,11 +46,12 @@
       </div>
     </div>
     <Paging :index.sync="filter.index" :length="filter.length"
-      :count="contactList.count" @change="search" />
+      :count="contactList.count" @change="search"/>
   </div>
 </template>
 
 <script>
+import ContactDelete from './ContactDelete'
 import ContactListFilter from './ContactListFilter'
 import Paging from '@/components/Paging'
 
@@ -63,6 +65,7 @@ export default {
         index: 0,
         length: 10
       },
+      selectedContact: null,
       contactList: {
         contacts: [
           {
@@ -90,10 +93,15 @@ export default {
     this.$parent.title = 'Contatos'
   },
   components: {
+    ContactDelete,
     ContactListFilter,
     Paging
   },
   methods: {
+    remove (contact) {
+      this.selectedContact = contact
+      $(this.$refs.contactDelete.$el).modal('show')
+    },
     search () { }
   }
 }

@@ -4,7 +4,7 @@
       <span class="icon"><i class="fa fa-plus"></i></span>
       <span class="text">Nova campanha</span>
     </router-link>
-    <CampaignListFilter :filter="filter" :submit="search" />
+    <CampaignListFilter :filter="filter" :submit="search"/>
     <div class="card shadow">
       <div class="table-responsive">
         <table class="table mb-0">
@@ -49,7 +49,7 @@
         </table>
       </div>
     </div>
-    <Paging :index.sync="filter.index" :length="filter.length" :count="campaignList.count" @change="search" />
+    <Paging :index.sync="filter.index" :length="filter.length" :count="campaignList.count" @change="search"/>
   </div>
 </template>
 
