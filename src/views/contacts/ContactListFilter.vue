@@ -14,7 +14,7 @@
           </div>
           <div class="col-12 col-md-6 col-lg-6">
             <div class="form-group">
-              <MarkerLabel :labels="filter.labels"/>
+              <MarkerLabel :labels="filter.labels" placeholder="Todos"/>
             </div>
           </div>
         </div>

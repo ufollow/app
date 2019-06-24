@@ -1,6 +1,6 @@
 <template>
   <div class="container p-4">
-    <router-link :to="{ name: 'contactNew' }" class="btn btn-primary btn-icon mr-3 mb-3">
+    <router-link :to="{ name: 'contactEdit' }" class="btn btn-primary btn-icon mr-3 mb-3">
       <span class="icon"><i class="fa fa-plus"></i></span>
       <span class="text">Novo contato</span>
     </router-link>

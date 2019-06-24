@@ -3,7 +3,9 @@
     <label>Marcadores</label>
     <div class="input-group">
       <div class="form-control overflow-auto">
-        <span class="text-secondary" v-if="labels.length === 0">Todos</span>
+        <span class="text-secondary" v-if="labels.length === 0">
+          {{ placeholder }}
+        </span>
         <a href="#" class="badge badge-secondary text-uppercase mr-1"
           v-for="label in labels" :key="label.id" @click.prevent="removeLabel(label)">
           {{ label.name }} <span class="ml-1">&times;</span>
@@ -39,7 +41,8 @@ export default {
     }
   },
   props: {
-    labels: Array
+    labels: Array,
+    placeholder: String
   },
   methods: {
     addLabel (label) {
