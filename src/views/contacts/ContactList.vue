@@ -12,7 +12,9 @@
           <tbody>
             <tr v-for="contact in contactList.contacts" :key="contact.id">
               <td>
-                <div>{{ contact.name }}</div>
+                <div>
+                  {{ contact.email }} <span v-if="contact.name">&mdash; {{ contact.name }}</span>
+                </div>
                 <div class="small text-secondary">
                   Cadastrado em {{ contact.createdAt }}
                 </div>
@@ -70,6 +72,7 @@ export default {
         contacts: [
           {
             id: 'a1',
+            email: 'maya.vera@email.com',
             name: 'Maya Vera Monteiro',
             createdAt: '20/03/2019',
             tags: [
@@ -78,7 +81,8 @@ export default {
           },
           {
             id: 'a2',
-            name: 'Fátima Nicole de Paula',
+            email: 'fatima.nicole@email.com',
+            name: null,
             createdAt: '10/06/2019',
             tags: [
               { id: 'a3', name: 'Designers', color: 'purple-dark' }

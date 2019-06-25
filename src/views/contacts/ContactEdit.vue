@@ -11,19 +11,43 @@
     <div class="card shadow">
       <div class="card-body">
         <div class="row">
-          <div class="col-12 col-md-8 col-lg-8">
+          <div class="col-12 col-md-6 col-lg-6">
             <div class="form-group">
-              <label>Nome</label>
+              <label>E-mail</label>
+              <input type="text" class="form-control" maxlength="80">
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-6">
+            <div class="form-group">
+              <label>
+                Nome
+                <small class="text-secondary">(opcional)</small>
+              </label>
               <input type="text" class="form-control" maxlength="80" autofocus>
             </div>
           </div>
-          <div class="col-12 col-md-4 col-lg-4">
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-6">
             <div class="form-group">
               <label>
                 Data de nascimento
                 <small class="text-secondary">(opcional)</small>
               </label>
               <input type="text" class="form-control" maxlength="10">
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-6">
+            <div class="form-group">
+              <label>
+                Gênero
+                <small class="text-secondary">(opcional)</small>
+              </label>
+              <select class="form-control">
+                <option :value="null">Não especificado</option>
+                <option value="F">Feminino</option>
+                <option value="M">Masculino</option>
+              </select>
             </div>
           </div>
         </div>
