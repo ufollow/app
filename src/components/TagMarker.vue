@@ -7,7 +7,7 @@
           {{ placeholder }}
         </span>
         <a href="#" class="badge badge-secondary text-uppercase mr-1"
-          v-for="tag in tags" :key="tag.id" @click.prevent="removeLabel(tag)">
+          v-for="tag in tags" :key="tag.id" @click.prevent="removeTag(tag)">
           {{ tag.name }} <span class="ml-1">&times;</span>
         </a>
       </div>
@@ -16,8 +16,8 @@
           <i class="fa fa-ellipsis-h"></i>
         </button>
         <div class="dropdown-menu dropdown-menu-right">
-          <a href="#" class="dropdown-item" v-for="tag in allLabels" :key="tag.id"
-            @click.prevent="addLabel(tag)">
+          <a href="#" class="dropdown-item" v-for="tag in allTags" :key="tag.id"
+            @click.prevent="addTag(tag)">
             {{ tag.name }}
           </a>
         </div>
@@ -31,7 +31,7 @@ export default {
   name: 'tagMarker',
   data () {
     return {
-      allLabels: [
+      allTags: [
         { id: 'a1', name: 'Analistas' },
         { id: 'a2', name: 'Desenvolvedores' },
         { id: 'a3', name: 'Designers' },
@@ -45,13 +45,13 @@ export default {
     placeholder: String
   },
   methods: {
-    addLabel (tag) {
+    addTag (tag) {
       const index = this.tags.indexOf(tag)
       const notContain = index < 0
 
       if (notContain) this.tags.push(tag)
     },
-    removeLabel (tag) {
+    removeTag (tag) {
       const index = this.tags.indexOf(tag)
       const contains = index >= 0
 
