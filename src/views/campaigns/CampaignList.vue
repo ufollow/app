@@ -15,7 +15,7 @@
                 <div class="small text-secondary">
                   Criada em {{ campaign.createdAt }}
                 </div>
-                <span :class="`badge bg-palette-${tag.color} text-uppercase mr-1 mt-2`"
+                <span :class="`badge badge-palette-${tag.color} text-uppercase mr-1 mt-2`"
                   v-for="tag in campaign.tags" :key="tag.id">
                   {{ tag.name }}
                 </span>

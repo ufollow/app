@@ -16,7 +16,7 @@
                 <div class="small text-secondary">
                   Cadastrado em {{ contact.createdAt }}
                 </div>
-                <span :class="`badge bg-palette-${tag.color} text-uppercase mr-1 mt-2`"
+                <span :class="`badge badge-palette-${tag.color} text-uppercase mr-1 mt-2`"
                   v-for="tag in contact.tags" :key="tag.id">
                   {{ tag.name }}
                 </span>

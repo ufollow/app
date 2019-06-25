@@ -13,7 +13,7 @@ $user-palette: (
 
 @each $color, $variants in $user-palette {
   @each $variant, $hex in $variants {
-    .badge.bg-palette-#{$color}-#{$variant} {
+    .badge.badge-palette-#{$color}-#{$variant} {
       background: $hex;
       color: $white;
       font-weight: 600;

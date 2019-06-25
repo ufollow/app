@@ -30,7 +30,7 @@
         <div class="form-group">
           <label>Exemplo</label>
           <div>
-            <span :class="`badge bg-palette-${tag.color} text-uppercase`">
+            <span :class="`badge badge-palette-${tag.color} text-uppercase`">
               {{ tag.name || 'Marcador' }}
             </span>
           </div>
