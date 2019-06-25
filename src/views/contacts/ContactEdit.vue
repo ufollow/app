@@ -8,7 +8,7 @@
       <span class="icon"><i class="fa fa-save"></i></span>
       <span class="text">Salvar</span>
     </button>
-    <div class="card">
+    <div class="card shadow">
       <div class="card-body">
         <div class="row">
           <div class="col-12 col-md-8 col-lg-8">
@@ -28,7 +28,7 @@
           </div>
         </div>
         <div class="form-group">
-          <MarkerLabel :labels="contact.labels" placeholder="Nenhum"/>
+          <TagMarker :tags="contact.tags" placeholder="Nenhum"/>
         </div>
       </div>
     </div>
@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import MarkerLabel from '@/components/MarkerLabel'
+import TagMarker from '@/components/TagMarker'
 
 export default {
   name: 'contactEdit',
@@ -44,7 +44,7 @@ export default {
     return {
       contact: {
         name: '',
-        labels: [],
+        tags: [],
         birthDate: null
       }
     }
@@ -53,7 +53,7 @@ export default {
     this.$parent.title = 'Editar contato'
   },
   components: {
-    MarkerLabel
+    TagMarker
   }
 }
 </script>

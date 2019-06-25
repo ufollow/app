@@ -14,7 +14,7 @@
           </div>
           <div class="col-12 col-md-6 col-lg-6">
             <div class="form-group">
-              <MarkerLabel :labels="filter.labels" placeholder="Todos"/>
+              <TagMarker :tags="filter.tags" placeholder="Todos"/>
             </div>
           </div>
         </div>
@@ -30,12 +30,12 @@
 </template>
 
 <script>
-import MarkerLabel from '@/components/MarkerLabel'
+import TagMarker from '@/components/TagMarker'
 
 export default {
   name: 'campaignListFilter',
   components: {
-    MarkerLabel
+    TagMarker
   },
   props: {
     filter: Object,
@@ -44,7 +44,7 @@ export default {
   methods: {
     reset () {
       this.filter.title = ''
-      this.filter.labels = []
+      this.filter.tags = []
       this.filter.index = 0
     }
   }

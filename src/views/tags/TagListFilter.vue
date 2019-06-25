@@ -5,18 +5,9 @@
     </a>
     <form id="search" class="collapse" @submit.prevent="submit">
       <div class="card-body">
-        <div class="row">
-          <div class="col-12 col-md-6 col-lg-6">
-            <div class="form-group">
-              <label>Nome</label>
-              <input type="text" class="form-control" maxlength="80" v-model="filter.name">
-            </div>
-          </div>
-          <div class="col-12 col-md-6 col-lg-6">
-            <div class="form-group">
-              <TagMarker :tags="filter.tags" placeholder="Todos"/>
-            </div>
-          </div>
+        <div class="form-group">
+          <label>Nome</label>
+          <input type="text" class="form-control" maxlength="20" v-model="filter.name">
         </div>
         <button type="submit" class="btn btn-primary mr-2">
           Pesquisar
@@ -30,21 +21,15 @@
 </template>
 
 <script>
-import TagMarker from '@/components/TagMarker'
-
 export default {
-  name: 'contactListFilter',
+  name: 'tagListFilter',
   props: {
     filter: Object,
     submit: Function
   },
-  components: {
-    TagMarker
-  },
   methods: {
     reset () {
       this.filter.name = ''
-      this.filter.tags = []
       this.filter.index = 0
     }
   }

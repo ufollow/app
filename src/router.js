@@ -4,6 +4,8 @@ import CampaignEditor from './views/campaigns/CampaignEditor.vue'
 import CampaignList from './views/campaigns/CampaignList.vue'
 import ContactEdit from './views/contacts/ContactEdit.vue'
 import ContactList from './views/contacts/ContactList.vue'
+import TagEdit from './views/tags/TagEdit.vue'
+import TagList from './views/tags/TagList.vue'
 import Dashboard from './views/Dashboard.vue'
 import ForgotPassword from './views/ForgotPassword.vue'
 import LoggedUser from './layouts/LoggedUser.vue'
@@ -26,8 +28,10 @@ export default new Router({
         { path: '/', name: 'dashboard', component: Dashboard },
         { path: '/campanhas', name: 'campaignList', component: CampaignList },
         { path: '/campanhas/editor', name: 'campaignEditor', component: CampaignEditor },
+        { path: '/contatos', name: 'contactList', component: ContactList },
         { path: '/contatos/editar', name: 'contactEdit', component: ContactEdit },
-        { path: '/contatos', name: 'contactList', component: ContactList }
+        { path: '/marcadores', name: 'tagList', component: TagList },
+        { path: '/marcadores/editar', name: 'tagEdit', component: TagEdit }
       ]
     }
   ]

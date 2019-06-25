@@ -1,0 +1,32 @@
+$user-palette: (
+  red: (light: #ED5565, dark: #DA4453),
+  orange: (light: #FC6E51, dark: #E9573F),
+  yellow: (light: #FFC654, dark: #F6BB42),
+  green: (light: #A0D468, dark: #8CC152),
+  mint: (light: #48CFAD, dark: #37BC9B),
+  acqua: (light: #4FC1E9, dark: #3BAFDA),
+  blue: (light: #5D9CEC, dark: #4A89DC),
+  purple: (light: #AC92EC, dark: #967ADC),
+  pink: (light: #EC87C0, dark: #D770AD),
+  gray: (light: #AAB2BD, dark: #858796)
+);
+
+@each $color, $variants in $user-palette {
+  @each $variant, $hex in $variants {
+    .badge.badge-palette-#{$color}-#{$variant} {
+      background: $hex;
+      color: $white;
+      font-weight: 600;
+    }
+
+    .btn.btn-palette-#{$color}-#{$variant} {
+      background: $hex;
+      height: 3rem;
+      width: 3rem;
+    }
+
+    .text-palette-#{$color}-#{$variant} {
+      color: $hex;
+    }
+  }
+}

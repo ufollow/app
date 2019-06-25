@@ -3,12 +3,12 @@
     <label>Marcadores</label>
     <div class="input-group">
       <div class="form-control overflow-auto">
-        <span class="text-secondary" v-if="labels.length === 0">
+        <span class="text-secondary" v-if="tags.length === 0">
           {{ placeholder }}
         </span>
         <a href="#" class="badge badge-secondary text-uppercase mr-1"
-          v-for="label in labels" :key="label.id" @click.prevent="removeLabel(label)">
-          {{ label.name }} <span class="ml-1">&times;</span>
+          v-for="tag in tags" :key="tag.id" @click.prevent="removeTag(tag)">
+          {{ tag.name }} <span class="ml-1">&times;</span>
         </a>
       </div>
       <div class="input-group-append">
@@ -16,9 +16,9 @@
           <i class="fa fa-ellipsis-h"></i>
         </button>
         <div class="dropdown-menu dropdown-menu-right">
-          <a href="#" class="dropdown-item" v-for="label in allLabels" :key="label.id"
-            @click.prevent="addLabel(label)">
-            {{ label.name }}
+          <a href="#" class="dropdown-item" v-for="tag in allTags" :key="tag.id"
+            @click.prevent="addTag(tag)">
+            {{ tag.name }}
           </a>
         </div>
       </div>
@@ -28,10 +28,10 @@
 
 <script>
 export default {
-  name: 'markerLabel',
+  name: 'tagMarker',
   data () {
     return {
-      allLabels: [
+      allTags: [
         { id: 'a1', name: 'Analistas' },
         { id: 'a2', name: 'Desenvolvedores' },
         { id: 'a3', name: 'Designers' },
@@ -41,21 +41,21 @@ export default {
     }
   },
   props: {
-    labels: Array,
+    tags: Array,
     placeholder: String
   },
   methods: {
-    addLabel (label) {
-      const index = this.labels.indexOf(label)
+    addTag (tag) {
+      const index = this.tags.indexOf(tag)
       const notContain = index < 0
 
-      if (notContain) this.labels.push(label)
+      if (notContain) this.tags.push(tag)
     },
-    removeLabel (label) {
-      const index = this.labels.indexOf(label)
+    removeTag (tag) {
+      const index = this.tags.indexOf(tag)
       const contains = index >= 0
 
-      if (contains) this.labels.splice(index, 1)
+      if (contains) this.tags.splice(index, 1)
     }
   }
 }
