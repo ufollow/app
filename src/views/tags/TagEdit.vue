@@ -21,7 +21,7 @@
         <div class="form-group">
           <label>Cor do marcador</label>
           <div>
-            <div class="btn-group-vertical mr-3 mb-3" v-for="(color, index) in colors" :key="`color-${index}`">
+            <div class="btn-group-vertical mr-2 mb-2" v-for="(color, index) in colors" :key="`color-${index}`">
               <button type="button" :class="`btn btn-palette-${color}-light`" @click="setColor(`${color}-light`)"></button>
               <button type="button" :class="`btn btn-palette-${color}-dark`" @click="setColor(`${color}-dark`)"></button>
             </div>
